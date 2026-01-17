@@ -1,0 +1,24 @@
+{
+  "name": "obsidian-calendar-plugin",
+  "version": "1.0.0",
+  "description": "Display notes from configurable folders on a calendar view with color-coded categories",
+  "main": "main.js",
+  "scripts": {
+    "dev": "node esbuild.config.mjs",
+    "build": "node esbuild.config.mjs production"
+  },
+  "keywords": [
+    "obsidian",
+    "calendar",
+    "plugin"
+  ],
+  "author": "Muppit",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^22.10.5",
+    "builtin-modules": "^4.0.0",
+    "esbuild": "^0.24.2",
+    "obsidian": "^1.7.2",
+    "typescript": "^5.7.3"
+  }
+}

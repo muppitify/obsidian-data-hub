@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prime History Exporter</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Prime History Exporter</h1>
+    </header>
+
+    <main>
+      <!-- Status Section -->
+      <section id="status-section" class="status hidden">
+        <div id="status-message"></div>
+      </section>
+
+      <!-- Page Check -->
+      <section id="page-check" class="warning hidden">
+        <p>Navigate to your <a href="https://www.primevideo.com/settings/watch-history" target="_blank">Prime Video Watch History</a> page to export.</p>
+      </section>
+
+      <!-- Export Options -->
+      <section id="options-section">
+        <div class="form-group">
+          <label for="format-select">Output Format</label>
+          <select id="format-select">
+            <option value="json">JSON</option>
+            <option value="csv">CSV</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label class="checkbox-label">
+            <input type="checkbox" id="webhook-enabled">
+            <span>Send to Webhook</span>
+          </label>
+        </div>
+
+        <div class="form-group webhook-options hidden" id="webhook-options">
+          <label for="webhook-url">Webhook URL</label>
+          <input type="url" id="webhook-url" placeholder="http://localhost:3000/webhook">
+        </div>
+      </section>
+
+      <!-- Actions -->
+      <section id="actions-section">
+        <button id="export-btn" class="btn-primary">
+          <span class="btn-text">Export Watch History</span>
+          <span class="btn-spinner hidden"></span>
+        </button>
+      </section>
+
+      <!-- Results -->
+      <section id="results-section" class="hidden">
+        <h2>Results</h2>
+        <div id="results-content"></div>
+      </section>
+    </main>
+
+    <footer>
+      <p>Navigate to Prime Video watch history, then click Export.</p>
+    </footer>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

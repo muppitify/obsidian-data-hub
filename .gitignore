@@ -1,0 +1,15 @@
+# macOS
+.DS_Store
+._*
+
+# Editor
+*.swp
+*~
+.idea/
+.vscode/
+
+# Node
+node_modules/
+
+# Build artifacts
+*.log

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prime Video Obsidian Importer</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Prime Video Obsidian Importer</h1>
+    </header>
+
+    <main>
+      <!-- Status Section -->
+      <section id="status-section" class="status hidden">
+        <div id="status-message"></div>
+      </section>
+
+      <!-- Page Check -->
+      <section id="page-check" class="warning hidden">
+        <p>Navigate to your <a href="https://www.primevideo.com/settings/watch-history" target="_blank">Prime Video Watch History</a> page to import.</p>
+      </section>
+
+      <!-- Obsidian API Settings -->
+      <section id="obsidian-section">
+        <h2>Obsidian Connection</h2>
+        <div class="form-group">
+          <label for="api-url">API URL</label>
+          <input type="url" id="api-url" value="https://127.0.0.1:27124" placeholder="https://127.0.0.1:27124">
+        </div>
+
+        <div class="form-group">
+          <label for="api-key">API Key</label>
+          <input type="password" id="api-key" placeholder="Enter your Local REST API key">
+        </div>
+
+        <div class="form-group">
+          <label for="quickadd-choice">QuickAdd Choice Name</label>
+          <input type="text" id="quickadd-choice" value="Import Prime extension" placeholder="Import Prime extension">
+        </div>
+
+        <button id="test-connection-btn" class="btn-secondary">
+          Test Connection
+        </button>
+        <span id="connection-status" class="connection-status"></span>
+      </section>
+
+      <!-- Date Filter Settings -->
+      <section id="filter-section">
+        <h2>Date Filter</h2>
+        <div class="form-group">
+          <label class="radio-label">
+            <input type="radio" name="date-filter" value="all" checked>
+            <span>All items</span>
+          </label>
+          <label class="radio-label">
+            <input type="radio" name="date-filter" value="from">
+            <span>From date:</span>
+            <input type="date" id="from-date" disabled>
+          </label>
+          <label class="radio-label">
+            <input type="radio" name="date-filter" value="range">
+            <span>Date range:</span>
+            <input type="date" id="range-from" disabled>
+            <span>to</span>
+            <input type="date" id="range-to" disabled>
+          </label>
+        </div>
+      </section>
+
+      <!-- Preview -->
+      <section id="preview-section" class="hidden">
+        <div id="preview-content" class="preview-box"></div>
+      </section>
+
+      <!-- Actions -->
+      <section id="actions-section">
+        <div class="button-row">
+          <button id="scan-btn" class="btn-secondary" disabled>
+            <span class="scan-text">Scan Page</span>
+            <span class="scan-spinner hidden"></span>
+          </button>
+          <button id="import-btn" class="btn-primary" disabled>
+            <span class="btn-text">Import to Obsidian</span>
+            <span class="btn-spinner hidden"></span>
+          </button>
+        </div>
+      </section>
+
+      <!-- Results -->
+      <section id="results-section" class="hidden">
+        <h2>Results</h2>
+        <div id="results-content"></div>
+      </section>
+    </main>
+
+    <footer>
+      <p>Navigate to Prime Video watch history, then click Import.</p>
+    </footer>
+  </div>
+
+  <script src="obsidian-api.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>

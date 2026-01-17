@@ -1,0 +1,10 @@
+{
+  "id": "obsidian-calendar-plugin",
+  "name": "Calendar View",
+  "version": "1.0.0",
+  "minAppVersion": "1.0.0",
+  "description": "Display notes from configurable folders on a calendar view with color-coded categories",
+  "author": "Muppit",
+  "authorUrl": "",
+  "isDesktopOnly": false
+}
